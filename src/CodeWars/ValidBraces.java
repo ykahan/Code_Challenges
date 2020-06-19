@@ -11,7 +11,7 @@ public class ValidBraces {
     All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.
     * */
 
-    public boolean areBracesValid(String str){
+    public boolean areAllBracesValid(String str){
         ArrayList<String> parans = new ArrayList<>();
         ArrayList<String> brackets = new ArrayList<>();
         ArrayList<String> curlies = new ArrayList<>();
@@ -20,6 +20,15 @@ public class ValidBraces {
             if (str.charAt(i) == '[' || str.charAt(i) == ']') brackets.add(Character.toString(str.charAt(i)));
             if (str.charAt(i) == '{' || str.charAt(i) == '}') curlies.add(Character.toString(str.charAt(i)));
         }
+
+        boolean paransValid = areTheseBracesValid(parans);
+        boolean bracketsValid = areTheseBracesValid(brackets);
+        boolean curliesValid = areTheseBracesValid(curlies);
+
+        return(paransValid && bracketsValid && curliesValid);
+    }
+
+    public boolean areTheseBracesValid(ArrayList<String> list){
         
     }
 }
