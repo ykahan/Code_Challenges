@@ -1,7 +1,9 @@
 package CodeWars;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class CountingDuplicates {
     /*
@@ -14,12 +16,13 @@ public class CountingDuplicates {
         text = text.toLowerCase();
         int count = 0;
         Map<Character, Boolean> charMap = new HashMap();
+        Set<Character> foundChars = new HashSet<>();
         for (int character = 0; character < text.length(); character++) {
             boolean foundChar = charMap.containsKey(text.charAt(character));
-            if (foundChar) count++;
+            if (foundChar) foundChars.add(text.charAt(character));
             charMap.put(text.charAt(character), true);
         }
-        return count;
+        return foundChars.size();
     }
 
     public static void main(String[] args) {
