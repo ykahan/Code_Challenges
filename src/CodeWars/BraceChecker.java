@@ -2,7 +2,7 @@ package CodeWars;
 
 import java.util.ArrayList;
 
-public class ValidBraces {
+public class BraceChecker {
     /*Write a function that takes a string of braces, and determines if the order of the braces is valid.
     It should return true if the string is valid, and false if it's invalid.
     This Kata is similar to the Valid Parentheses Kata, but introduces new characters:
