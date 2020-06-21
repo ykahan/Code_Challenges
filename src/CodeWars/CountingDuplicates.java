@@ -14,15 +14,14 @@ public class CountingDuplicates {
 
     public static int duplicateCount(String text) {
         text = text.toLowerCase();
-        int count = 0;
-        Map<Character, Boolean> charMap = new HashMap();
-        Set<Character> foundChars = new HashSet<>();
+        Set<Character> foundChars = new HashSet();
+        Set<Character> repeatedChars = new HashSet<>();
         for (int character = 0; character < text.length(); character++) {
-            boolean foundChar = charMap.containsKey(text.charAt(character));
-            if (foundChar) foundChars.add(text.charAt(character));
-            charMap.put(text.charAt(character), true);
+            boolean foundChar = foundChars.contains(text.charAt(character));
+            if (foundChar) repeatedChars.add(text.charAt(character));
+            else foundChars.add(text.charAt(character));
         }
-        return foundChars.size();
+        return repeatedChars.size();
     }
 
     public static void main(String[] args) {
