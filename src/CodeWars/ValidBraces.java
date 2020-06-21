@@ -59,7 +59,7 @@ public class ValidBraces {
                     }
                 } else if (oldBrace.equals(Braces.RIGHT_PARANS)){
                     if(newBrace.equals(Braces.LEFT_BRACKETS)
-                    || newBrace.equals(Braces.LEFT_CURLIES)){
+                            || newBrace.equals(Braces.LEFT_CURLIES)){
                         return false;
                     }
                 }
